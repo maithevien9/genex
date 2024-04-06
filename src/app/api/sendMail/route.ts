@@ -1,5 +1,5 @@
 import { sendEmailConfig } from '@/configs/sendGrid';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 
 interface SendMailForm {
   yourName: string;
@@ -8,15 +8,18 @@ interface SendMailForm {
   message: string;
 }
 
-const POST = async (req: NextApiRequest, res: NextApiResponse) => {
+const POST = async (req: any, res: any) => {
   const { yourName, email, company, message } = req.body;
 
   try {
     await sendEmailConfig({ yourName, email, company, message });
-    res.status(200).json({ message: 'Email sent successfully' });
+    return NextResponse.json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
+    return NextResponse.json(
+      { message: 'Internal Server Error!' },
+      { status: 500 },
+    );
   }
 };
 

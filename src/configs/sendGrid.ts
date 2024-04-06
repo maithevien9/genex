@@ -21,9 +21,5 @@ export const sendEmailConfig = async (values: SendMailForm) => {
     dynamic_template_data: values,
   };
 
-  try {
-    await sgMail.send(msg);
-  } catch (error) {
-    console.error({ error });
-  }
+  await sgMail.send(msg);
 };

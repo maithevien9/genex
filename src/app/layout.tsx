@@ -22,6 +22,7 @@ export default function RootLayout({
           content="GeneX - Make Your Design Better"
         ></meta>
         <link rel="icon" href="./favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
 
         <meta
           name="description"

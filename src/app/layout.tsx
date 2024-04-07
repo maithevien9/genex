@@ -21,6 +21,7 @@ export default function RootLayout({
           property="og:title"
           content="GeneX - Make Your Design Better"
         ></meta>
+        <link rel="icon" href="./favicon.ico" sizes="any" />
 
         <meta
           name="description"

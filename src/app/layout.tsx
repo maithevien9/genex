@@ -18,6 +18,8 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <head>
         <title>GeneX - Make Your Design Better</title>
+        <link rel="icon" href="/favicon.ico" />
+
         <meta content="GeneX - Make Your Design Better" property="og:title" />
         <meta content="website" property="og:type" />
         <meta

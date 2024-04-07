@@ -32,7 +32,7 @@ export default function RootLayout({
           name="og:description"
           content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
         ></meta>
-        <meta property="og:image" content="./background.png" />
+        <meta property="og:image" content="/background.png" />
       </head>
       <body className="h-full">{children}</body>
     </html>

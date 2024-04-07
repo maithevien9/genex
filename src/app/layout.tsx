@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import '../styles/fonts/Fonts/WEB/css/nippo.css';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,22 +18,13 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <head>
         <title>GeneX - Make Your Design Better</title>
+        <meta content="GeneX - Make Your Design Better" property="og:title" />
+        <meta content="website" property="og:type" />
         <meta
-          property="og:title"
-          content="GeneX - Make Your Design Better"
-        ></meta>
-        <link rel="icon" href="./favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-
-        <meta
-          name="description"
           content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
-        ></meta>
-        <meta
-          name="og:description"
-          content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
-        ></meta>
-        <meta property="og:image" content="/background.png" />
+          property="og:description"
+        />
+        <meta content="/background.png" property="og:image" />
       </head>
       <body className="h-full">{children}</body>
     </html>

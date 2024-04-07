@@ -1,5 +1,5 @@
 'use client';
-import Header from '@/components/Header';
+import HeaderComponent from '@/components/Header';
 import Input from '@/components/Input';
 import TextArea from '@/components/TextArea';
 import { useState } from 'react';
@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <main className="h-full relative pt-[20px] md:pt-[30px] 4xl:pt-[58px] z-50 bg-black overflow-auto">
-      <Header />
+      <HeaderComponent />
       <div className="mt-[120px] md:mt-0 md:absolute static top-1/2 left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-full flex justify-center">
         <div className="px-[16px] md:px-[46px] md:translate-y-8 2xl:translate-y-2">
           <div className="text-white text-[42px] md:text-[50px] 4xl:text-[64px] leading-[50px] text-start w-fit">

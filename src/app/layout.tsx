@@ -15,6 +15,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <title>GeneX - Make Your Design Better</title>
+        <meta
+          property="og:title"
+          content="GeneX - Make Your Design Better"
+        ></meta>
+
+        <meta
+          name="description"
+          content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
+        ></meta>
+        <meta
+          name="og:description"
+          content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
+        ></meta>
+        <meta property="og:image" content="./background.png" />
+      </head>
       <body className="h-full">{children}</body>
     </html>
   );

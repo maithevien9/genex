@@ -22,7 +22,7 @@ interface SendMailForm {
 
 export async function sendEmailwithBrevoSmtpAction(values: SendMailForm) {
   const mail_from = process.env.NEXT_PUBLIC_EMAIL_FROM;
-  const mail_to = process.env.NEXT_PUBLIC_EMAIL_FROM;
+  const mail_to = process.env.NEXT_PUBLIC_EMAIL_TO;
   const brevo_key = process.env.NEXT_PUBLIC_BREVO_KEY;
 
   if (!mail_from || !mail_to || !brevo_key) {
@@ -43,7 +43,7 @@ export async function sendEmailwithBrevoSmtpAction(values: SendMailForm) {
     host: 'smtp-relay.brevo.com',
     port: 587,
     auth: {
-      user: mail_to,
+      user: mail_from,
       pass: brevo_key,
     },
   });
@@ -64,6 +64,7 @@ export async function sendEmailwithBrevoSmtpAction(values: SendMailForm) {
     return new Promise<ContactFormState>((resolve, reject) => {
       transporter.sendMail(mailOptions, function (error: any, info: any) {
         if (error) {
+          console.log('error', error);
           resolve({
             message: 'Something went wrong',
             error: true,

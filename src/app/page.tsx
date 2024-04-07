@@ -2,6 +2,7 @@
 import HeaderComponent from '@/components/Header';
 import Input from '@/components/Input';
 import TextArea from '@/components/TextArea';
+import { sendEmailwithBrevoSmtpAction } from '@/configs/sendMail';
 import { useState } from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,16 +27,12 @@ export default function Home() {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      await fetch('/api/sendMail', {
-        body: JSON.stringify({
-          values,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
-      toast.success('Email sent successfully!');
+      const response = await sendEmailwithBrevoSmtpAction(values);
+      if (response.error) {
+        toast.error('Internal Server Error!');
+      } else {
+        toast.success('Email sent successfully!');
+      }
       setIsLoading(false);
     } catch (_) {
       toast.error('Internal Server Error!');

@@ -25,6 +25,11 @@ export default function Home() {
   });
 
   const handleSubmit = async () => {
+    if (!values.yourName || !values.email) {
+      toast.error('Please fill your name and email!');
+      return;
+    }
+
     setIsLoading(true);
     try {
       const response = await sendEmailwithBrevoSmtpAction(values);

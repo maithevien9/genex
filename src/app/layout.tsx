@@ -26,6 +26,10 @@ export default function RootLayout({
           content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
           property="og:description"
         />
+        <meta
+          name="description"
+          content="We are an independent creative studio helping startups, scale-ups and enterprise companies build world-class brands."
+        ></meta>
         <meta content="/background.png" property="og:image" />
       </head>
       <body className="h-full">{children}</body>
